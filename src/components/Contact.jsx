@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Button from './Button';
 import './Contact.css';
 
 const Contact = () => {
+    const form = useRef();
+    const [status, setStatus] = useState(''); // '', 'sending', 'success', 'error'
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Placeholder submission
-        alert("Message sent! (Mock)");
+        setStatus('sending');
+
+        emailjs.sendForm(
+            'service_1nbbt1p',
+            'template_qcs06kn',
+            form.current,
+            'XR2AvxBvMjOag6YkJ'
+        )
+            .then((result) => {
+                console.log(result.text);
+                setStatus('success');
+                e.target.reset(); // Clear the form
+                setTimeout(() => setStatus(''), 5000); // Clear success message after 5s
+            }, (error) => {
+                console.log(error.text);
+                setStatus('error');
+                setTimeout(() => setStatus(''), 5000); // Clear error message after 5s
+            });
     };
 
     return (
@@ -31,20 +51,26 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <form className="contact-form" onSubmit={handleSubmit}>
+                <form className="contact-form" ref={form} onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label htmlFor="name">Name</label>
-                        <input type="text" id="name" required placeholder="John Doe" />
+                        <input type="text" id="name" name="name" placeholder="John Doe" required />
                     </div>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" required placeholder="john@example.com" />
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required />
                     </div>
                     <div className="input-group">
                         <label htmlFor="message">Message</label>
-                        <textarea id="message" required rows="4" placeholder="Hello..."></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
                     </div>
-                    <Button type="submit" variant="primary">Send Message</Button>
+
+                    {status === 'success' && <div className="form-message success" style={{ color: 'var(--accent-neon)', marginBottom: '1rem' }}>Message sent successfully!</div>}
+                    {status === 'error' && <div className="form-message error" style={{ color: '#ff4d4d', marginBottom: '1rem' }}>Failed to send message. Please try again.</div>}
+
+                    <Button type="submit" variant="primary" className="submit-btn" disabled={status === 'sending'}>
+                        {status === 'sending' ? 'Sending...' : 'Send Message'}
+                    </Button>
                 </form>
             </div>
 
