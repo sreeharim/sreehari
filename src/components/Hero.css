@@ -43,15 +43,20 @@
     justify-content: center;
 }
 
+.avatar-tilt-wrapper {
+    transform-style: preserve-3d;
+}
+
 .avatar-placeholder {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     background: linear-gradient(135deg, #1e1e24 0%, #0a0a0c 100%);
     border: 2px solid var(--border-glass);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), inset 0 0 20px var(--border-glass);
+    box-shadow: 0 30px 60px -15px rgba(70, 13, 242, 0.6), inset 0 0 20px var(--border-glass);
     position: relative;
     overflow: hidden;
+    transform: translateZ(40px);
 }
 
 .avatar-placeholder::after {

@@ -9,16 +9,17 @@ const Hero = () => {
                 <div className="hero-avatar">
                     <Tilt
                         className="avatar-tilt-wrapper"
-                        tiltMaxAngleX={10}
-                        tiltMaxAngleY={10}
-                        perspective={1000}
-                        transitionSpeed={1000}
-                        scale={1.05}
+                        tiltMaxAngleX={25}
+                        tiltMaxAngleY={25}
+                        perspective={800}
+                        transitionSpeed={1500}
+                        scale={1.15}
                         glareEnable={true}
-                        glareMaxOpacity={0.2}
+                        glareMaxOpacity={0.4}
                         glareColor="#ffffff"
                         glarePosition="all"
                         glareBorderRadius="50%"
+                        trackOnWindow={true}
                     >
                         <div className="avatar-placeholder">
                             <img src="/avatar.webp" alt="Developer Avatar" className="avatar-img" />
