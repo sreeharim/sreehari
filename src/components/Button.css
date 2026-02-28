@@ -15,17 +15,20 @@
 }
 
 .btn-primary {
-    background-color: rgba(147, 51, 234, 0.1);
-    /* Subtle neon purple tint */
-    color: var(--accent-neon);
-    border: 1px solid var(--accent-neon);
-    box-shadow: 0 0 10px rgba(147, 51, 234, 0.2);
+    background: linear-gradient(135deg, rgba(70, 13, 242, 0.2), rgba(70, 13, 242, 0.05));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    border: 1px solid rgba(70, 13, 242, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    font-weight: 600;
 }
 
 .btn-primary:hover:not(:disabled) {
-    background-color: var(--accent-neon);
-    color: #fff;
-    box-shadow: 0 0 20px var(--accent-neon-glow), 0 0 40px var(--accent-neon-glow);
+    background: linear-gradient(135deg, rgba(70, 13, 242, 0.4), rgba(70, 13, 242, 0.1));
+    border-color: var(--accent-neon);
+    box-shadow: 0 0 20px var(--accent-neon-glow), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
