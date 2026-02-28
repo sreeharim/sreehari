@@ -1,0 +1,110 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, var(--accent-neon-glow) 0%, transparent 60%);
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: -1;
+    filter: blur(80px);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+}
+
+.hero-avatar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.avatar-placeholder {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e1e24 0%, #0a0a0c 100%);
+    border: 2px solid var(--border-glass);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), inset 0 0 20px var(--border-glass);
+    position: relative;
+    overflow: hidden;
+}
+
+.avatar-placeholder::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, transparent, transparent, var(--accent-neon));
+    animation: rotate 4s linear infinite;
+    opacity: 0.1;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-text {
+    flex: 2;
+    padding: 3rem;
+    position: relative;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.hero-bio {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
