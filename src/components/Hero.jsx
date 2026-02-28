@@ -21,7 +21,7 @@ const Hero = () => {
                         glareBorderRadius="50%"
                     >
                         <div className="avatar-placeholder">
-                            <img src="/avatar.png" alt="Developer Avatar" className="avatar-img" />
+                            <img src="/avatar.webp" alt="Developer Avatar" className="avatar-img" />
                         </div>
                     </Tilt>
                 </div>
