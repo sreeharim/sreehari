@@ -1,4 +1,5 @@
 import React from 'react';
+import Tilt from 'react-parallax-tilt';
 import './Hero.css';
 import avatarImg from '../assets/avatar.png';
 
@@ -7,10 +8,23 @@ const Hero = () => {
         <section className="hero container" id="about">
             <div className="hero-content">
                 <div className="hero-avatar">
-                    {/* Avatar Placeholder */}
-                    <div className="avatar-placeholder">
-                        <img src={avatarImg} alt="Developer Avatar" className="avatar-img" />
-                    </div>
+                    <Tilt
+                        className="avatar-tilt-wrapper"
+                        tiltMaxAngleX={10}
+                        tiltMaxAngleY={10}
+                        perspective={1000}
+                        transitionSpeed={1000}
+                        scale={1.05}
+                        glareEnable={true}
+                        glareMaxOpacity={0.2}
+                        glareColor="#ffffff"
+                        glarePosition="all"
+                        glareBorderRadius="50%"
+                    >
+                        <div className="avatar-placeholder">
+                            <img src={avatarImg} alt="Developer Avatar" className="avatar-img" />
+                        </div>
+                    </Tilt>
                 </div>
                 <div className="hero-text glass-panel">
                     <h2 className="greeting">Hello, I'm</h2>
