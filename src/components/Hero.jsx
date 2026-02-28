@@ -1,7 +1,6 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import './Hero.css';
-import avatarImg from '../assets/avatar.png';
 
 const Hero = () => {
     return (
@@ -22,7 +21,7 @@ const Hero = () => {
                         glareBorderRadius="50%"
                     >
                         <div className="avatar-placeholder">
-                            <img src={avatarImg} alt="Developer Avatar" className="avatar-img" />
+                            <img src="/avatar.png" alt="Developer Avatar" className="avatar-img" />
                         </div>
                     </Tilt>
                 </div>
