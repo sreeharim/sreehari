@@ -68,7 +68,7 @@ const Contact = () => {
                     {status === 'success' && <div className="form-message success" style={{ color: 'var(--accent-neon)', marginBottom: '1rem' }}>Message sent successfully!</div>}
                     {status === 'error' && <div className="form-message error" style={{ color: '#ff4d4d', marginBottom: '1rem' }}>Failed to send message. Please try again.</div>}
 
-                    <Button type="submit" variant="primary" className="submit-btn" disabled={status === 'sending'}>
+                    <Button type="submit" variant="primary" className="btn btn-primary" disabled={status === 'sending'}>
                         {status === 'sending' ? 'Sending...' : 'Send Message'}
                     </Button>
                 </form>
