@@ -26,7 +26,7 @@ const projectsData = [
         title: 'Malayalam WhatsApp Stickers',
         description: 'A viral Android utility serving a curated library of regional expression stickers to over 100,000+ users. Optimized for high performance and low latency.',
         techStack: ['Java', 'Android Studio', 'Firebase', 'WhatsApp API'],
-        liveLink: 'https://play.google.com/store/apps/details?id=com.sreehari.sticker/',
+        liveLink: 'https://play.google.com/store/apps/details?id=com.sreehari.sticker',
         githubLink: 'https://github.com/sreeharim/malayalamsticker',
         image: stickersImg
     }
