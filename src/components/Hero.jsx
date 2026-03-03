@@ -30,7 +30,7 @@ const Hero = () => {
                     <h2 className="greeting">Hello, I'm</h2>
                     <h1 className="heading-xl"><span className="text-gradient">Sreehari M</span></h1>
                     <p className="hero-bio">
-                        A Senior React Engineer specializing in building premium, high-performance web applications with modern technologies and elegant user interfaces.
+                        A Senior React Engineer with over a decade of enterprise experience, specializing in building premium, high-performance web applications.
                     </p>
                     <div className="hero-actions">
                         <a href="#projects" className="btn btn-primary">View My Work</a>
