@@ -8,7 +8,7 @@ import stickersImg from '../assets/stickers.png';
 const projectsData = [
     {
         title: 'Ethapadam',
-        description: 'A high-performance web application designed for Malayalam cinema enthusiasts. Features a dynamic "5-clue" game mechanic that rewards speed and deductive reasoning.',
+        description: 'A high-performance web application that engages 500+ daily Malayalam cinema enthusiasts. Features a dynamic "5-clue" game mechanic that rewards speed and deductive reasoning.',
         techStack: ['React.js', 'Supabase', 'Vite', 'Firebase', 'Vercel'],
         liveLink: 'https://www.ethapadam.com/',
         githubLink: 'https://github.com/sreeharim/ethapadam',
