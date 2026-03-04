@@ -1,0 +1,33 @@
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    /* Ignore clicks so it doesn't block UI */
+    z-index: 9999;
+    /* Ensure it stays on top */
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background-color: var(--accent-neon, #460df2);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-neon-glow, rgba(70, 13, 242, 0.5));
+    animation: glitterFade 0.5s ease-out forwards;
+}
+
+@keyframes glitterFade {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        /* Drift upwards and shrink */
+        transform: scale(0.1) translate(0, -30px);
+    }
+}
