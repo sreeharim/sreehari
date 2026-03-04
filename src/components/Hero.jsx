@@ -1,5 +1,6 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
+import resumeFile from '../assets/resume.pdf';
 import './Hero.css';
 
 const Hero = () => {
@@ -33,7 +34,8 @@ const Hero = () => {
                         A Senior React Engineer with over a decade of enterprise experience, specializing in building premium, high-performance web applications.
                     </p>
                     <div className="hero-actions">
-                        <a href="#projects" className="btn btn-primary">View My Work</a>
+                        <a href={resumeFile} download="Sreehari_Resume.pdf" className="btn btn-primary">Download Resume</a>
+                        <a href="#projects" className="btn btn-glass">View My Work</a>
                         <a href="#contact" className="btn btn-glass">Contact Me</a>
                     </div>
                 </div>
